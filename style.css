@@ -71,6 +71,7 @@ header{
 
 nav .navlinks{
     list-style-type: none;
+    display: flex;
 }
 
 nav .navlinks li{
@@ -169,7 +170,7 @@ nav .navlinks li a:hover{
 
 .hero-text .social i{
     color: #e5e5e5;
-    font-size: 18px;
+    font-size: 1.5rem;
     margin-right: 10px;
     transition: 0.5s;
     margin-left: 10px;
@@ -178,13 +179,92 @@ nav .navlinks li a:hover{
     color: #007ced;
 }
 
-/* View transition*/
+#open-sidebar-button {
+    display: none;
+    background:none;
+    border: none;
+    padding: 1em;
+    margin-left: auto;
+    cursor: pointer;
+    transition: 0.5s;
+    
+}
+button i{
+    color: #fff;
+    font-size: 1.5rem;
+    align-items: center;
+    transition: 0.5s;
+    
+}
+button i:hover{
+    color: #007ced;
+}
 
-  
+#close-sidebar-button{
+    display: none;
+    background: none;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+
+  #overlay{
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    display: none;
+    
+  }
 
 /* responsive design*/
-@media(max-width:900px)
+@media screen and (max-width:900px)
 {
+    #open-sidebar-button, #close-sidebar-button{
+        display: block;
+    }
+    
+    nav{
+        position: fixed;
+        top: 90px;
+        right: -100%;
+        height: 30vh;
+        width: min(15em, 100%);
+        z-index: 10;
+        background-color:grey ;
+        transition: right 300ms ease-out;
+        background-color: #3c3c3c;
+        border-radius: 12px;
+    }
+    nav .navlinks li button{
+        margin-left: auto;
+    }
+    nav .navlinks li a{
+        display: block;
+        margin: 2vh 0px;
+        padding: 0px 16px;
+        
+    }
+    nav.show{
+        right: 0;
+    }
+    nav.show ~ #overlay{
+        display: block;
+    }
+    
+    nav ul{
+        width: 100%;
+        flex-direction: column;
+    }
+    nav a{
+        width: 100%;
+        padding-left: 2.5em;
+    }
+    
+
     .container{
         flex-direction: column;
         padding-top: 2rem;
