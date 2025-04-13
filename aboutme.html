@@ -4,23 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="aboutme.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>About me</title>
 </head>
 <body>
     <div class="hero-header">
         <div class="wrapper">
-            <header><!--navbar-->
+            <header> <!--Navbar-->
                 <div class="logo">
                     <i class="fa-solid fa-a"></i>
                 </div>
-                <nav>
+                <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false" aria-controls="navbar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                
+                <nav id="navbar">
                     <ul class="navlinks">
-                        <li><a href="index.html">Home</a></li>
+                        <li>
+                            <button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </li>
+                        <li><a aria-current="page" href="index.html">Home</a></li>
                         <li><a href="aboutme.html">About me</a></li>
                         <li><a href="stack.html">Tech Stack</a></li>
                     </ul>
                 </nav>
+                <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
             </header>
             <div class="container">
                 <div class="hero-text">
@@ -33,5 +44,6 @@
 
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

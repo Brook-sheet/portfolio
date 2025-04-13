@@ -146,27 +146,7 @@ nav .navlinks li a:hover{
 .hero-text p{
     color: #e5e5e5;
 }
-.btn-group{
-    margin: 45px 0;
-}
-.btn-group .btn{
-    border-color: #d5d5d5;
-    color: #fff;
-    background-color: #333;
-    padding: 12px 25px;
-    margin: 5px 0;
-    margin-right: 7px;
-    border-radius: 30px;
-    transition: 0.5s;
-    border: 2px solid #e5e5e5;
-    
-    box-shadow: 0 10px 10px -8px rgb(0 0 0 / 78%);
-}
 
-.btn:hover{
-    border-color: #007ced;
-    
-}
 
 .hero-text .social i{
     color: #e5e5e5;
@@ -177,6 +157,10 @@ nav .navlinks li a:hover{
 }
 .hero-text .social i:hover{
     color: #007ced;
+}
+.social{
+    margin-top: 10px;
+    padding: 20px;
 }
 
 #open-sidebar-button {
@@ -250,6 +234,10 @@ button i:hover{
     }
     nav.show{
         right: 0;
+        
+    }
+    nav.show li a{
+        text-align: center;
     }
     nav.show ~ #overlay{
         display: block;
@@ -264,6 +252,9 @@ button i:hover{
         padding-left: 2.5em;
     }
     
+    .social{
+        text-align: center;
+    }
 
     .container{
         flex-direction: column;
@@ -273,14 +264,6 @@ button i:hover{
         padding: 40px 0px;
     }
 }
-@media(min-height:1024px){
-    .container{
-        flex-direction: column;
-        padding-top: 2rem;
-    }
-    .hero-text{
-        padding: 40px 0px;
-    }
-}
+
 
 
