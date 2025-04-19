@@ -85,17 +85,29 @@ nav .navlinks li a:hover{
     
 }
 .container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 4rem;
-    
+    padding-top: 3rem;
+    text-align: center;
 }
 .hero-text h1{
     color: #e5e5e5;
 }
 .hero-text p{
     color: #e5e5e5;
+    margin-top: 10px;
+}
+.hero-text .social i{
+    color: #e5e5e5;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+.hero-text .social i:hover{
+    color: #007ced;
+}
+.social{
+    margin-top: 10px;
+    padding: 20px;
 }
 
 #open-sidebar-button {

@@ -94,8 +94,10 @@ nav .navlinks li a:hover{
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid #444;
-    box-shadow: 3px 10px 30px rgb(0, 0, 0, 0.5);
+    border: 3px solid #17153B;
+    box-shadow: 0 0 10px #433D8B,
+    0 0 50px #17153B;
+    
 }
 
 .hero-pic img{
@@ -112,7 +114,6 @@ nav .navlinks li a:hover{
     max-width: 500px;
     display: flex;
     flex-direction: column;
-    
 }
 
 .hero-text h3{
