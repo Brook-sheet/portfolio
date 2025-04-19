@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stack.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Tech Stack</title>
+</head>
+<body>
+    <div class="hero-header">
+        <div class="wrapper">
+            <header> <!--Navbar-->
+                <div class="logo">
+                    <i class="fa-solid fa-a"></i>
+                </div>
+                <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false" aria-controls="navbar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <nav id="navbar">
+                    <ul class="navlinks">
+                        <li>
+                            <button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </li>
+                        <li><a aria-current="page" href="index.html">Home</a></li>
+                        <li><a href="about-me.html">About Me</a></li>
+                        <li><a href="tech-stack.html">Tech Stack</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+            </header>
+            <div class="container">
+                <div class="hero-text">
+                    <h1>Tech stack</h1>
+                    <p>These are the skills I’ve learned so far</p>
+                </div>
+            </div>
+            <section class="programming-section">
+                <h1>Programming Languages</h1>
+                <div class="skills-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C language"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="Javascript"/>
+                </div>
+            </section>
+            <section class="programming-section">
+                <h1>Web Development</h1>
+                <div class="skills-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="html"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="css"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="bootstrap"/>
+                </div>
+            </section>
+            <section class="programming-section">
+                <h1>Tools</h1>
+                <div class="skills-icon">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="vscode"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" alt="androidstudio"/>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
