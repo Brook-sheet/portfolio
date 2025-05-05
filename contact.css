@@ -25,12 +25,15 @@ body{
     width: 100%;
     height: 100%;
     min-height: 100vh;
+    
+    
 }
 .wrapper{
     width:1280px;
     max-width: 95%;
     margin: 0 auto;
     padding: 0 20px;
+    
 }
 
 header{
@@ -39,6 +42,7 @@ header{
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    
 }
 
 .logo{
@@ -101,9 +105,7 @@ nav .navlinks li a:hover{
     text-align: center;
     
 }
-.hero-text{
-    z-index: 2;
-}
+
 .hero-text h1{
     color: #e5e5e5;
     
@@ -119,7 +121,6 @@ nav .navlinks li a:hover{
     transition: 0.5s;
     margin-left: 10px;
     
-    
 }
 .hero-text .social i:hover{
     color: #007ced;
@@ -127,8 +128,6 @@ nav .navlinks li a:hover{
 .social{
     margin-top: 10px;
     padding: 20px;
-    
-    
 }
 
 #open-sidebar-button {
