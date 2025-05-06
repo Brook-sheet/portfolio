@@ -2,85 +2,111 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stack.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <title>Vincent Ace Fronteras | Tech Stack</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="stack.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+<title>Vincent Ace Fronteras | Tech Stack</title>
 </head>
 
 <body>
-    <div class="hero-header">
-        <div class="wrapper">
-            <div id="particles-js"></div>
-            <header> <!--Navbar-->
-                <div class="logo">
-                    <i class="fa-solid fa-a"></i>
+<div class="hero-header">
+    <div class="wrapper">
+        
+        <header> <!--Navbar-->
+            <div class="logo">
+                <i class="fa-solid fa-a"></i>
+            </div>
+            <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false"
+                aria-controls="navbar">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav id="navbar">
+                <ul class="navlinks">
+                    <li>
+                        <button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </li>
+                    <li><a aria-current="page" href="index.html">Home</a></li>
+                    <li><a href="about-me.html">About Me</a></li>
+                    <li><a href="tech-stack.html">Tech Stack</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+        </header>
+        <div class="container">
+            <div class="hero-text">
+                <h1>Tech Stack</h1>
+                <p>These are the skills I’ve learned so far</p>
+            </div>
+        </div>
+        <section class="programming-section">
+            <h1>Programming Languages</h1>
+            <div class="skills-icon">
+                <div class="icon-flex d-flex flex-column pt-2">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
+                    alt="C language" />
+                <p class="text-center mt-2">C</p>
                 </div>
-                <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false"
-                    aria-controls="navbar">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-                <nav id="navbar">
-                    <ul class="navlinks">
-                        <li>
-                            <button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar">
-                                <i class="fa-solid fa-xmark"></i>
-                            </button>
-                        </li>
-                        <li><a aria-current="page" href="index.html">Home</a></li>
-                        <li><a href="about-me.html">About Me</a></li>
-                        <li><a href="tech-stack.html">Tech Stack</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-                <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
-            </header>
-            <div class="container">
-                <div class="hero-text">
-                    <h1>Tech Stack</h1>
-                    <p>These are the skills I’ve learned so far</p>
+                <div class="icon-flex d-flex flex-column pt-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                    alt="Java" />
+                <p class="text-center mt-2">Java</p>
+                </div>
+                <div class="icon-flex d-flex flex-column pt-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                    alt="Javascript" />
+                <p class="text-center mt-2">JavaScript</p>
                 </div>
             </div>
-            <section class="programming-section">
-                <h1>Programming Languages</h1>
-                <div class="skills-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
-                        alt="C language" />
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
-                        alt="Java" />
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                        alt="Javascript" />
+        </section>
+        <section class="programming-section">
+            <h1>Web Development</h1>
+            <div class="skills-icon">
+                <div class="icon-flex d-flex flex-column pt-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                    alt="html" />
+                <p class="text-center mt-2">HTML</p>
                 </div>
-            </section>
-            <section class="programming-section">
-                <h1>Web Development</h1>
-                <div class="skills-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                        alt="html" />
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                        alt="css" />
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
-                        alt="bootstrap" />
-                </div>
-            </section>
-            <section class="programming-section">
-                <h1>Tools</h1>
-                <div class="skills-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
-                        alt="vscode" />
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg"
-                        alt="androidstudio" />
-                </div>
-            </section>
+            <div class="icon-flex d-flex flex-column pt-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                    alt="css" />
+                    <p class="text-center mt-2">CSS</p>
+            </div>
+            <div class="icon-flex d-flex flex-column pt-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                    alt="bootstrap" />
+                    <p class="text-center mt-2">Bootstrap</p>
+            </div>
         </div>
+        </section>
+        <section class="programming-section">
+            <h1>Tools</h1>
+            <div class="skills-icon">
+                <div class="icon-flex d-flex flex-column pt-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+                    alt="vscode" />
+                    <p class="text-center mt-2">VS code</p>
+                </div>
+                <div class="icon-flex d-flex flex-column pt-2">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg"
+                    alt="androidstudio" />
+                    <p class="text-center mt-2 fs-6">Android Studio</p>
+                </div>
+            </div>
+        </div>
+        </section>
     </div>
-    <script src="script.js"></script>
-    <script src="particles.js"></script>
-    <script src="app.js"></script>
+</div>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -87,6 +87,7 @@ nav .navlinks li a{
     color: #e5e5e5;
     margin-right: 2.5rem;
     transition: 0.5s;
+    text-decoration: none;
     
 }
 nav .navlinks li a:hover{
@@ -119,10 +120,21 @@ nav .navlinks li a:hover{
     margin-top: 20px;
    
 }
+
+.skills-icon p{
+    margin: 0;
+}
 .skills-icon img{
     width: 60px;
     z-index: 2;
+    margin: 0 auto;
 }
+
+.icon-flex{
+    width: 100px;
+    height: auto;
+    padding: 5px;
+    backdrop-filter: blur(5px); background-color: rgba(255, 255, 255, 0); border-radius: 20px; box-shadow: 35px 35px 68px 0px rgba(94, 99, 104, 0.5), inset -1px -1px 16px 0px rgba(94, 99, 104, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);}
 
 #open-sidebar-button {
     display: none;
