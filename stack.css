@@ -115,9 +115,9 @@ nav .navlinks li a:hover{
 
 .skills-icon{
     display: flex;
-    gap: 35px;
+    gap: 30px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 15px;
    
 }
 
@@ -125,7 +125,7 @@ nav .navlinks li a:hover{
     margin: 0;
 }
 .skills-icon img{
-    width: 60px;
+    width: 50px;
     z-index: 2;
     margin: 0 auto;
 }
