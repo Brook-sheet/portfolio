@@ -9,7 +9,6 @@ text-decoration: none;
 }
 body{
 overflow-x: hidden;
-background-image: url(images/black.jpg);
 background-position: center;
 background-attachment: fixed;
 background-size: cover;
@@ -43,20 +42,21 @@ justify-content: center;
 align-items: center;
 z-index: 2;
 }
-.logo i{
-height: 45px;
-width: 45px;
-background-color: #3c3c3c;
-border-radius: 50%;
-color: #fff;
-font-weight: bold;
-font-size: 1.5rem;
-padding: 10px;
-margin-right: 5px;
-cursor: pointer;
-text-align: center;
-transition: 0.5s;
 
+.logo i{
+    height: 45px;
+    width: 45px;
+    background-color: #320747;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s;
+    
 }
 .logo i:hover{
 text-shadow: 0 0 10px #fff,
@@ -81,55 +81,51 @@ z-index: 2;
 }
 
 nav .navlinks li a{
-color: #e5e5e5;
-margin-right: 2.5rem;
-transition: 0.5s;
-
-
+    color: #000000;
+    margin-right: 2.5rem;
+    transition: 0.5s;
+    box-shadow: 0 0 10px #433D8B;
+    padding: 10px;
+    border-radius: 12px;
+    
 }
-nav .navlinks li a:hover{
-color: #007ced;
-
-
+nav .navlinks li a:active{
+    color: white;
+    background-color: #36074d;
 }
+
 .aboutme-section{
 display: flex;
 justify-content: center; 
 }
+
 .container{
 width: 50%;
 min-width: 300px;
-line-height: 1.5;
+line-height: 1.4;
 padding: 30px;
-border: 3px #3c3c3c solid;
-background-color: #1e1e1e; 
-border-radius: 20px;
+margin-top: 20px;
+border-radius: 12px;
+box-shadow: 0 0 5px #433D8B;
+transition: transform 0.2s ease-in-out;
 z-index: 2;
 
 }
+
+.container:hover{
+    transform: scale(1.02);
+    box-shadow: 0 0 10px #433D8B;
+}
 .hero-text h1{
-color: #e5e5e5;
+color: #000000;
 text-align: center;
 }
 .hero-text p{
-color: #e5e5e5;
+color: #000000;
 margin-top: 20px;
 }
 /*tech stacks*/
-.programming-section{
-color: white;
-padding: 30px;
-}
 
-.skills-icon{
-display: flex;
-gap: 35px;
-flex-wrap: wrap;
-margin-top: 20px;
-}
-.skills-icon img{
-width: 60px;
-}
 
 /*open and close button*/
 #open-sidebar-button {
@@ -143,15 +139,13 @@ transition: 0.5s;
 
 }
 button i{
-color: #fff;
+color: #000000;
 font-size: 1.5rem;
 align-items: center;
 transition: 0.5s;
 
 }
-button i:hover{
-color: #007ced;
-}
+
 
 #close-sidebar-button{
 display: none;
@@ -185,21 +179,23 @@ nav{
     position: fixed;
     top: 90px;
     right: -100%;
+    margin-right: 10%;
     height: 40vh;
     width: min(15em, 100%);
     z-index: 10;
-    background-color:grey ;
+    background-color:rgb(113, 113, 113) ;
     transition: right 300ms ease-out;
-    background-color: #3c3c3c;
+    background-color: #ffffff;
     border-radius: 12px;
+    padding: 12px;
 }
 nav .navlinks li button{
     margin-left: auto;
 }
 nav .navlinks li a{
     display: block;
-    margin: 2vh 0px;
-    padding: 0px 16px;
+    margin: 1vh 0px;
+    padding: 10px;
     
 }
 nav.show{
