@@ -10,7 +10,6 @@
 
 body{
     overflow-x: hidden;
-    background-image: url(images/black.jpg);
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -50,7 +49,7 @@ header{
 .logo i{
     height: 45px;
     width: 45px;
-    background-color: #3c3c3c;
+    background-color: #320747;
     border-radius: 50%;
     color: #fff;
     font-weight: bold;
@@ -84,36 +83,47 @@ nav .navlinks li{
 }
 
 nav .navlinks li a{
-    color: #e5e5e5;
+    color: #000000;
     margin-right: 2.5rem;
-    transition: 0.5s;
-    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 0 10px #433D8B;
+    padding: 10px;
+    border-radius: 12px;
     
 }
 nav .navlinks li a:hover{
-    color: #007ced;
-    
-    
+    background-color: #a23ed43d;
+    font-size: 18px;
+}
+nav .navlinks li a:active{
+    color: white;
+    background-color: #36074d;
 }
 .container{
     width: 100%;
-    max-width: 1000px;
+    
     padding: 20px;   
+    text-align: center;
+    
 }
 .hero-text h1{
-    color: #e5e5e5;
+    color: #000000;
 }
 .hero-text p{
-    color: #e5e5e5;
+    color: #000000;
 }
 
 /*tech stacks*/
 .programming-section{
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+    
 }
 .programming-section h1{
     font-size: 25px;
+    
 }
 
 .skills-icon{
@@ -121,6 +131,7 @@ nav .navlinks li a:hover{
     gap: 30px;
     flex-wrap: wrap;
     margin-top: 10px;
+    justify-content: center;
    
 }
 
@@ -134,14 +145,17 @@ nav .navlinks li a:hover{
 }
 
 
-.icon-flex{
-    width: 100px;
+.stacks{
+    width: 120px;
     height: auto;
-    padding: 5px;
+    padding: 12px;
     transition: 0.3s;
-    backdrop-filter: blur(2px); background-color: rgba(255, 255, 255, 0); border-radius: 20px; box-shadow: 35px 35px 68px 0px rgba(41, 41, 41, 0.5), inset -12px -12px 16px 0px rgba(41, 41, 41, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);}
+    box-shadow: 0 0 10px #433D8B;
+    border-radius: 12px;
+    
+}
 
-.icon-flex:hover{
+.stacks:hover{
     transform: scale(1.1);
 }
 
@@ -156,15 +170,17 @@ nav .navlinks li a:hover{
     
 }
 button i{
-    color: #fff;
+    color: #000000;
     font-size: 1.5rem;
     align-items: center;
     transition: 0.5s;
     
 }
 button i:hover{
-    color: #007ced;
+    color: #793999;
 }
+
+
 
 #close-sidebar-button{
     display: none;
@@ -198,21 +214,23 @@ button i:hover{
         position: fixed;
         top: 90px;
         right: -100%;
+        margin-right: 10%;
         height: 40vh;
         width: min(15em, 100%);
         z-index: 10;
-        background-color:grey ;
+        background-color:rgb(113, 113, 113) ;
         transition: right 300ms ease-out;
-        background-color: #3c3c3c;
+        background-color: #ffffff;
         border-radius: 12px;
+        padding: 12px;
     }
     nav .navlinks li button{
         margin-left: auto;
     }
     nav .navlinks li a{
         display: block;
-        margin: 2vh 0px;
-        padding: 0px 16px;
+        margin: 1vh 0px;
+        padding: 10px;
         
     }
     nav.show{
@@ -234,4 +252,4 @@ button i:hover{
         padding-left: 2.5em;
     }
     
-}
+    }

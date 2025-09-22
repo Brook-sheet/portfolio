@@ -83,11 +83,15 @@ z-index: 2;
 nav .navlinks li a{
     color: #000000;
     margin-right: 2.5rem;
-    transition: 0.5s;
+    transition: 0.3s;
     box-shadow: 0 0 10px #433D8B;
     padding: 10px;
     border-radius: 12px;
     
+}
+nav .navlinks li a:hover{
+    background-color: #a23ed43d;
+    font-size: 18px;
 }
 nav .navlinks li a:active{
     color: white;
@@ -145,6 +149,10 @@ align-items: center;
 transition: 0.5s;
 
 }
+button i:hover{
+    color: #793999;
+}
+
 
 
 #close-sidebar-button{
