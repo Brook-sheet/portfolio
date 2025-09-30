@@ -1,3 +1,25 @@
+:root{
+    --base-color: white;
+    --base-variant: rgb(206, 206, 206);
+    --text-color: #111528;
+    --secondary-text: #232738;
+    --shadow-color: #433D8B;
+    --button-hover: #b86edd;
+    --button-active: #500974;
+    --border-color: #17153B;
+    --logo-color: white;
+}
+.darkmode{
+    --base-color: #111528;
+    --base-variant: #232738;
+    --text-color: white;
+    --secondary-text: rgb(206, 206, 206);
+    --shadow-color: #b86edd;    
+    --button-hover: #722897;
+    --button-active: #500974;
+    --border-color: #3e1050;
+    --logo-color: white;
+}
 *{
 box-sizing: border-box;
 padding: 0;
@@ -9,9 +31,11 @@ text-decoration: none;
 }
 body{
 overflow-x: hidden;
+background-color: var(--base-color);
 background-position: center;
 background-attachment: fixed;
 background-size: cover;
+transition: 0.5s;
 }
 
 .hero-header{
@@ -36,19 +60,19 @@ align-items: center;
 flex-wrap: wrap;
 }
 
-.logo{
+#logo{
 display: inline-flex;
 justify-content: center;
 align-items: center;
 z-index: 2;
 }
 
-.logo i{
+#logo i{
     height: 45px;
     width: 45px;
-    background-color: #320747;
+    background-color: var(--border-color);
     border-radius: 50%;
-    color: #fff;
+    color: var(--logo-color);
     font-weight: bold;
     font-size: 1.5rem;
     padding: 10px;
@@ -58,7 +82,7 @@ z-index: 2;
     transition: 0.5s;
     
 }
-.logo i:hover{
+#logo i:hover{
 text-shadow: 0 0 10px #fff,
 0 0 15px #fff,
 0 0 21px #fff,
@@ -81,21 +105,21 @@ z-index: 2;
 }
 
 nav .navlinks li a{
-    color: #000000;
+    color: var(--text-color);
     margin-right: 2.5rem;
     transition: 0.3s;
-    box-shadow: 0 0 10px #433D8B;
+    box-shadow: 0 0 10px var(--shadow-color);
     padding: 10px;
     border-radius: 12px;
     
 }
 nav .navlinks li a:hover{
-    background-color: #a23ed43d;
+    background-color: var(--button-hover);
     font-size: 18px;
 }
 nav .navlinks li a:active{
     color: white;
-    background-color: #36074d;
+    background-color: var(--button-active);
 }
 
 .aboutme-section{
@@ -110,22 +134,23 @@ line-height: 1.4;
 padding: 30px;
 margin-top: 20px;
 border-radius: 12px;
-box-shadow: 0 0 5px #433D8B;
-transition: transform 0.2s ease-in-out;
+background-color: var(--base-variant);
+box-shadow: 0 0 5px var(--shadow-color);
+transition: 0.3s;
 z-index: 2;
 
 }
 
 .container:hover{
     transform: scale(1.02);
-    box-shadow: 0 0 10px #433D8B;
+    box-shadow: 0 0 10px var(--shadow-color);
 }
 .hero-text h1{
-color: #000000;
+color: var(--text-color);
 text-align: center;
 }
 .hero-text p{
-color: #000000;
+color: var(--secondary-text);
 margin-top: 20px;
 }
 /*tech stacks*/
@@ -143,14 +168,14 @@ transition: 0.5s;
 
 }
 button i{
-color: #000000;
+color: var(--text-color);
 font-size: 1.5rem;
 align-items: center;
 transition: 0.5s;
 
 }
 button i:hover{
-    color: #793999;
+    color: var(--button-hover);
 }
 
 
@@ -191,9 +216,8 @@ nav{
     height: 40vh;
     width: min(15em, 100%);
     z-index: 10;
-    background-color:rgb(113, 113, 113) ;
     transition: right 300ms ease-out;
-    background-color: #ffffff;
+    background-color: var(--base-color);
     border-radius: 12px;
     padding: 12px;
 }
