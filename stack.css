@@ -34,8 +34,8 @@
 body{
     overflow-x: hidden;
     background-image: url('images/background-lines.png');
-    background-position: center;
     background-color: var(--base-color);
+    background-position: center;
     background-attachment: fixed;
     background-size: cover;
     transition: 0.5s;
