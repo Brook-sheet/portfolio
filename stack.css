@@ -1,5 +1,5 @@
 :root{
-    --base-color: white;
+    --base-color: rgb(225, 225, 225);
     --base-variant: rgb(206, 206, 206);
     --text-color: #111528;
     --secondary-text: #232738;
@@ -33,6 +33,7 @@
 
 body{
     overflow-x: hidden;
+    background-image: url('images/background-lines.png');
     background-position: center;
     background-color: var(--base-color);
     background-attachment: fixed;
@@ -172,6 +173,10 @@ nav .navlinks li a:active{
     transition: 0.3s;
     box-shadow: 0 0 10px var(--shadow-color);
     border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04 );
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     
 }
 

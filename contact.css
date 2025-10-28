@@ -1,5 +1,5 @@
 :root{
-    --base-color: white;
+    --base-color: rgb(225, 225, 225);
     --base-variant: rgb(206, 206, 206);
     --text-color: #111528;
     --secondary-text: #232738;
@@ -31,6 +31,7 @@ text-decoration: none;
 }
 body{
 overflow-x: hidden;
+background-image: url('images/background-lines.png');
 background-color: var(--base-color);
 background-position: center;
 background-attachment: fixed;
