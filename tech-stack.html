@@ -4,43 +4,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="stack.css">
+<script>if (localStorage.getItem('darkmode') === 'active') document.documentElement.classList.add('darkmode')</script>
+<meta name="description" content="Explore the programming languages, web technologies, databases, and tools learned by Vincent Ace Fronteras.">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<script src="assets/js/main.js" defer></script>
 <title>Vincent Ace Fronteras | Tech Stack</title>
 </head>
 
-<body>
+<body class="page-stack">
 <div class="hero-header">
     <div class="wrapper">
         <header> <!--Navbar-->
-            <div id="logo">
+            <button id="logo" type="button" aria-label="Toggle dark mode" aria-pressed="false">
                 <i class="fa-solid fa-a"></i>
-            </div>
-            <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false"
+            </button>
+            <button id="open-sidebar-button" aria-label="Open navigation menu" aria-expanded="false"
                 aria-controls="navbar">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <nav id="navbar">
+            <nav id="navbar" aria-label="Main navigation">
                 <ul class="navlinks">
                     <li>
-                        <button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar">
+                        <button id="close-sidebar-button" aria-label="Close navigation menu">
                             <i class="fa-solid fa-xmark"></i>
                         </button>
                     </li>
-                    <li><a aria-current="page" href="index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about-me.html">About Me</a></li>
-                    <li><a href="tech-stack.html">Tech Stack</a></li>
+                    <li><a aria-current="page" href="tech-stack.html">Tech Stack</a></li>
                     <li><a href="project.html">Project</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+            <div id="overlay" aria-hidden="true"></div>
         </header>
+        <main>
         <div class="container">
             <div class="hero-text">
                 <h1>Tech Stack</h1>
@@ -48,112 +53,108 @@
             </div>
         </div>
         <section class="programming-section">
-            <h1>Programming Languages</h1>
+            <h2>Programming Languages</h2>
             <div class="skills-icon">
                 <div class="stacks">
                     <img src="images/Clogo.png"
-                    alt="C language" />
+                    alt="" width="40" height="40" loading="lazy" decoding="async" />
                     <p>C</p>
                 </div>
                 <div class="stacks">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
-                    alt="Java" />
+                    alt="" width="40" height="40" loading="lazy" decoding="async" />
                     <p>Java</p>
                 </div>
                 <div class="stacks">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                    alt="Javascript" />
+                    alt="" width="40" height="40" loading="lazy" decoding="async" />
                     <p>JavaScript</p>
                 </div>
                 <div class="stacks">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" 
-                    alt="dart"/>
+                    alt="" width="40" height="40" loading="lazy" decoding="async"/>
                     <p>Dart</p>
                 </div>
             </div>
         </section>
         <section class="programming-section">
-            <h1>Web Development</h1>
+            <h2>Web Development</h2>
             <div class="skills-icon">
                 <div class="stacks">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                    alt="html" />
+                    alt="" width="40" height="40" loading="lazy" decoding="async" />
                     <p>HTML</p>
                 </div>
                 <div class="stacks">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                    alt="css" />
+                    alt="" width="40" height="40" loading="lazy" decoding="async" />
                     <p>CSS</p>
                 </div>
                 <div class="stacks">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
-                    alt="nodejs"/>
+                    alt="" width="40" height="40" loading="lazy" decoding="async"/>
                     <p>Node.js</p>
                 </div>
                 <div class="stacks">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" 
-                    alt="flutter"/>
+                    alt="" width="40" height="40" loading="lazy" decoding="async"/>
                     <p>Flutter</p>
                 </div>
                 <div class="stacks">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" 
-                    alt="expressjs"/>
+                    alt="" width="40" height="40" loading="lazy" decoding="async"/>
                     <p>Express JS</p>
                 </div>
                 <div class="stacks">
                     <img src="images/render.png" 
-                    alt="expressjs"/>
+                    alt="" width="40" height="40" loading="lazy" decoding="async"/>
                     <p>Render</p>
                 </div>
             </div>
         </section>
         <section class="programming-section">
-            <h1>Database</h1>
+            <h2>Database</h2>
             <div class="skills-icon">
                 <div class="stacks"> 
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
-                alt="mongodb" />
+                alt="" width="40" height="40" loading="lazy" decoding="async" />
                     <p>MongoDB</p>
                 </div>
                 <div class="stacks">
                     <img src="images/Firebaselogo.png"
-                    alt="firebase" />
+                    alt="" width="40" height="40" loading="lazy" decoding="async" />
                     <p>Firebase</p>
                 </div>
             </div>
         </section>
         <section class="programming-section">
-            <h1>Tools</h1>
+            <h2>Tools</h2>
             <div class="skills-icon">
                 <div class="stacks">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
-                    alt="vscode" />
+                    alt="" width="40" height="40" loading="lazy" decoding="async" />
                     <p>VS code</p>
                 </div>
                 <div class="stacks">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg"
-                    alt="androidstudio" />
+                    alt="" width="40" height="40" loading="lazy" decoding="async" />
                     <p>Android Studio</p>
                 </div>
                 <div class="stacks">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" 
-                    alt="postman"/>
+                    alt="" width="40" height="40" loading="lazy" decoding="async"/>
                     <p>Postman</p>
                 </div>
                 <div class="stacks">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netbeans/netbeans-original.svg" 
-                    alt="netbeans"/>
+                    alt="" width="40" height="40" loading="lazy" decoding="async"/>
                     <p>Netbeans</p>
                 </div>
             </div>
         </section>
-
+        </main>
     </div>
 </div>
-<script src="script.js"></script>
-<script type="text/javascript" src="darkmode.js" defer></script>
-
-
 </body>
 
 </html>

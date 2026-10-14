@@ -4,54 +4,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="project.css">
+    <script>if (localStorage.getItem('darkmode') === 'active') document.documentElement.classList.add('darkmode')</script>
+    <meta name="description" content="See SDCanteen, a mobile application project designed to streamline canteen orders and supply tracking.">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <script src="assets/js/main.js" defer></script>
     <title>Vincent Ace Fronteras | Project</title>
 </head>
 
-<body>
+<body class="page-project">
     <div class="hero-header">
         <div class="wrapper">
             <header> <!--Navbar-->
-                <div id="logo">
+                <button id="logo" type="button" aria-label="Toggle dark mode" aria-pressed="false">
                     <i class="fa-solid fa-a"></i>
-                </div>
-                <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false"
+                </button>
+                <button id="open-sidebar-button" aria-label="Open navigation menu" aria-expanded="false"
                     aria-controls="navbar">
                     <i class="fa-solid fa-bars"></i>
                 </button>
-                <nav id="navbar">
+                <nav id="navbar" aria-label="Main navigation">
                     <ul class="navlinks">
                         <li>
-                            <button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar">
+                            <button id="close-sidebar-button" aria-label="Close navigation menu">
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
                         </li>
-                        <li><a aria-current="page" href="index.html">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="about-me.html">About Me</a></li>
                         <li><a href="tech-stack.html">Tech Stack</a></li>
-                        <li><a href="project.html">Project</a></li>
+                        <li><a aria-current="page" href="project.html">Project</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
-                <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+                <div id="overlay" aria-hidden="true"></div>
             </header>
+            <main>
             <h1 class="title">Project</h1>
             <div class="aboutme-section">
                 <div class="container">
                     <div class="hero-text">
-                        <h1>SDCanteen</h1>
+                        <h2>SDCanteen</h2>
                         <p class="animate__animated animate__fadeInUp">SDCanteen is a mobile application designed to
                             improve efficiency in handling orders and tracking supplies.
                         </p>
-                        <div style="text-align: center;">
-                            <a href="https://github.com/jereeza-mae-mayuga/SDCAnteen.git" target="_blank"
+                        <div class="project-actions">
+                            <a href="https://github.com/jereeza-mae-mayuga/SDCAnteen.git" target="_blank" rel="noopener noreferrer"
                                 class="project-link">
                                 <i class="fa-brands fa-github"></i>
                                 view project
@@ -60,10 +65,9 @@
                     </div>
                 </div>
             </div>
+            </main>
         </div>
     </div>
-    <script src="script.js"></script>
-    <script type="text/javascript" src="darkmode.js" defer></script>
 </body>
 
 </html>
