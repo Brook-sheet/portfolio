@@ -45,7 +45,39 @@ if (openButton && closeButton && navbar && overlay) {
     closeButton.addEventListener("click", () => closeSidebar(true));
     overlay.addEventListener("click", () => closeSidebar());
     navbar.addEventListener("click", (event) => {
-        if (event.target instanceof HTMLAnchorElement && mobileNav.matches) {
+        const link = event.target instanceof Element
+            ? event.target.closest("a[href]")
+            : null;
+
+        if (!link) {
+            return;
+        }
+
+        const destination = new URL(link.href, window.location.href);
+        const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+        const destinationPath = destination.pathname.replace(/\/+$/, "") || "/";
+        const isSameDestination =
+            destination.origin === window.location.origin &&
+            destinationPath === currentPath &&
+            destination.search === window.location.search &&
+            destination.hash === window.location.hash;
+        const hasNavigationModifier =
+            event.button !== 0 ||
+            event.ctrlKey ||
+            event.metaKey ||
+            event.shiftKey ||
+            event.altKey;
+
+        if (
+            isSameDestination &&
+            !hasNavigationModifier &&
+            (!link.target || link.target === "_self") &&
+            !link.hasAttribute("download")
+        ) {
+            event.preventDefault();
+        }
+
+        if (mobileNav.matches) {
             closeSidebar();
         }
     });

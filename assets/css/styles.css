@@ -214,6 +214,14 @@ header {
     animation-delay: 1s;
 }
 
+html[data-completed-entrances~="home-portrait"] [data-entrance-id="home-portrait"],
+html[data-completed-entrances~="home-copy"] [data-entrance-id="home-copy"],
+html[data-completed-entrances~="about-intro"] [data-entrance-id="about-intro"],
+html[data-completed-entrances~="about-next"] [data-entrance-id="about-next"],
+html[data-completed-entrances~="project-summary"] [data-entrance-id="project-summary"] {
+    animation: none;
+}
+
 @keyframes fade-in-left {
     from { opacity: 0; transform: translate3d(-30px, 0, 0); }
     to { opacity: 1; transform: translate3d(0, 0, 0); }

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>if (localStorage.getItem('darkmode') === 'active') document.documentElement.classList.add('darkmode')</script>
+    <script src="assets/js/animation-state.js"></script>
     <meta name="description" content="Explore the portfolio of Vincent Ace Fronteras, an aspiring front-end and game developer.">
     <title>Vincent Ace Fronteras | Home</title>
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -47,10 +48,10 @@
                 <div id="overlay" aria-hidden="true"></div>
             </header>
             <main class="container">
-                <div class="hero-pic animate__animated animate__fadeInLeft">
+                <div class="hero-pic animate__animated animate__fadeInLeft" data-entrance-id="home-portrait">
                     <img src="images/ace_optimized_.jpg" alt="Portrait of Vincent Ace Fronteras" width="362" height="362" fetchpriority="high" decoding="async">
                 </div>
-                <div class="hero-text animate__animated animate__fadeInRight">
+                <div class="hero-text animate__animated animate__fadeInRight" data-entrance-id="home-copy">
                     <p class="greeting">Hi,</p>
                     <h1>I'm <span>Ace Fronteras</span></h1>
                     <p>an undergraduate BSIT student aspiring to become a Front-end/game developer. Take a look around
