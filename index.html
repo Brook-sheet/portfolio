@@ -7,7 +7,7 @@
     <script>if (localStorage.getItem('darkmode') === 'active') document.documentElement.classList.add('darkmode')</script>
     <script src="assets/js/animation-state.js"></script>
     <meta name="description" content="Explore the portfolio of Vincent Ace Fronteras, an aspiring front-end and game developer.">
-    <title>Vincent Ace Fronteras | Home</title>
+    <title>Vincent Ace Fronteras | Portfolio</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -20,50 +20,202 @@
     <script src="assets/js/main.js" defer></script>
 </head>
 
-<body class="page-home">
+<body>
     <div class="hero-header">
         <div class="wrapper">
-            <header> <!--Navbar-->
-                <button id="logo" type="button" aria-label="Toggle dark mode" aria-pressed="false">
-                    <i class="fa-solid fa-a"></i>
+            <header>
+                <button id="logo" class="brand-control" type="button" aria-label="Toggle color theme" aria-pressed="false">
+                    <span class="logo-mark" aria-hidden="true">A</span>
                 </button>
                 <button id="open-sidebar-button" aria-label="Open navigation menu" aria-expanded="false"
                     aria-controls="navbar">
-                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
                 </button>
                 <nav id="navbar" aria-label="Main navigation">
                     <ul class="navlinks">
                         <li>
-                            <button id="close-sidebar-button" aria-label="Close navigation menu">
-                                <i class="fa-solid fa-xmark"></i>
+                            <button id="close-sidebar-button" aria-label="Close navigation menu" type="button">
+                                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                             </button>
                         </li>
-                        <li><a aria-current="page" href="index.html">Home</a></li>
-                        <li><a href="about-me.html">About Me</a></li>
-                        <li><a href="tech-stack.html">Tech Stack</a></li>
-                        <li><a href="project.html">Project</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a aria-current="location" href="#home">Home</a></li>
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#tech-stack">Tech Stack</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div id="overlay" aria-hidden="true"></div>
             </header>
-            <main class="container">
-                <div class="hero-pic animate__animated animate__fadeInLeft" data-entrance-id="home-portrait">
-                    <img src="images/ace_optimized_.jpg" alt="Portrait of Vincent Ace Fronteras" width="362" height="362" fetchpriority="high" decoding="async">
-                </div>
-                <div class="hero-text animate__animated animate__fadeInRight" data-entrance-id="home-copy">
-                    <p class="greeting">Hi,</p>
-                    <h1>I'm <span>Ace Fronteras</span></h1>
-                    <p>an undergraduate BSIT student aspiring to become a Front-end/game developer. Take a look around
-                        and learn more about me!
-                    </p>
-                    <div class="social">
-                        <a href="https://github.com/Brook-sheet" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-                        <a href="https://www.linkedin.com/in/ace-fronteras-0473002b3/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i
-                                class="fa-brands fa-linkedin"></i></a>
+            <main>
+                <section id="home" class="page-home portfolio-section" aria-labelledby="home-title" tabindex="-1">
+                    <div class="container">
+                        <div class="hero-pic animate__animated animate__fadeInLeft" data-entrance-id="home-portrait">
+                            <img src="images/ace_optimized_.jpg" alt="Portrait of Vincent Ace Fronteras" width="362" height="362" fetchpriority="high" decoding="async">
+                        </div>
+                        <div class="hero-text animate__animated animate__fadeInRight" data-entrance-id="home-copy">
+                            <p class="greeting">Hi,</p>
+                            <h1 id="home-title">I'm <span>Ace Fronteras</span></h1>
+                            <p>an undergraduate BSIT student aspiring to become a Front-end/game developer. Take a look around
+                                and learn more about me!
+                            </p>
+                            <div class="social">
+                                <a href="https://github.com/Brook-sheet" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/in/ace-fronteras-0473002b3/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i
+                                        class="fa-brands fa-linkedin"></i></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
+
+                <section id="about" class="page-about portfolio-section" aria-labelledby="about-title" tabindex="-1">
+                    <div class="aboutme-section">
+                        <div class="container">
+                            <div class="hero-text">
+                                <h1 id="about-title">About Me</h1>
+                                <p class="animate__animated animate__fadeInUp" data-entrance-id="about-intro">I'm Vincent Ace Fronteras, a 3rd-year Bachelor of Science in Information Technology student
+                                    at St. Dominic College of Asia. A student with a strong curiosity about the tech world,
+                                    always eager to learn and experiment with new tools and ideas. My passion drives me to
+                                    explore front-end development and continuous improvement in my skills.
+                                </p>
+                                <p class="animate__animated animate__fadeInUp animate__delay-1s" data-entrance-id="about-next">I'm an aspiring front-end developer passionate about creating intuitive and engaging user
+                                    experiences. I'm also wanna try game development and continuously working to improve my
+                                    skills across the web and interactive technologies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tech-stack" class="page-stack portfolio-section" aria-labelledby="tech-stack-title" tabindex="-1">
+                    <div class="container">
+                        <div class="hero-text">
+                            <h1 id="tech-stack-title">Tech Stack</h1>
+                            <p>These are the skills I’ve learned so far</p>
+                        </div>
+                    </div>
+                    <section class="programming-section" aria-labelledby="languages-title">
+                        <h2 id="languages-title">Programming Languages</h2>
+                        <div class="skills-icon">
+                            <div class="stacks">
+                                <img src="images/Clogo.png" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>C</p>
+                            </div>
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Java</p>
+                            </div>
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>JavaScript</p>
+                            </div>
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Dart</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="programming-section" aria-labelledby="web-development-title">
+                        <h2 id="web-development-title">Web Development</h2>
+                        <div class="skills-icon">
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>HTML</p>
+                            </div>
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>CSS</p>
+                            </div>
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Node.js</p>
+                            </div>
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Flutter</p>
+                            </div>
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Express JS</p>
+                            </div>
+                            <div class="stacks">
+                                <img src="images/render.png" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Render</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="programming-section" aria-labelledby="database-title">
+                        <h2 id="database-title">Database</h2>
+                        <div class="skills-icon">
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>MongoDB</p>
+                            </div>
+                            <div class="stacks">
+                                <img src="images/Firebaselogo.png" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Firebase</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="programming-section" aria-labelledby="tools-title">
+                        <h2 id="tools-title">Tools</h2>
+                        <div class="skills-icon">
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>VS code</p>
+                            </div>
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Android Studio</p>
+                            </div>
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Postman</p>
+                            </div>
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netbeans/netbeans-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Netbeans</p>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <section id="projects" class="page-project portfolio-section" aria-labelledby="projects-title" tabindex="-1">
+                    <h1 id="projects-title" class="title">Projects</h1>
+                    <div class="aboutme-section">
+                        <div class="container">
+                            <div class="hero-text">
+                                <h2>SDCanteen</h2>
+                                <p class="animate__animated animate__fadeInUp" data-entrance-id="project-summary">SDCanteen is a mobile application designed to
+                                    improve efficiency in handling orders and tracking supplies.
+                                </p>
+                                <div class="project-actions">
+                                    <a href="https://github.com/jereeza-mae-mayuga/SDCAnteen.git" target="_blank" rel="noopener noreferrer"
+                                        class="project-link">
+                                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                        view project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="contact" class="page-contact portfolio-section" aria-labelledby="contact-title" tabindex="-1">
+                    <div class="container">
+                        <div class="hero-text">
+                            <h1 id="contact-title">Contact Me</h1>
+                            <p>If you have any inquiries or wish to connect, please don't hesitate to send me a message.</p>
+                            <div class="social">
+                                <a href="https://github.com/Brook-sheet" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                                <a href="https://www.linkedin.com/in/ace-fronteras-0473002b3/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i
+                                        class="fa-brands fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
+            <div id="page-end-sentinel" aria-hidden="true"></div>
         </div>
     </div>
 </body>

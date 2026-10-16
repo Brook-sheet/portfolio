@@ -1,6 +1,12 @@
 const pageName = window.location.pathname.split("/").pop() || "index.html";
 const entranceIdsByPage = {
-    "index.html": ["home-portrait", "home-copy"],
+    "index.html": [
+        "home-portrait",
+        "home-copy",
+        "about-intro",
+        "about-next",
+        "project-summary",
+    ],
     "about-me.html": ["about-intro", "about-next"],
     "project.html": ["project-summary"],
 };
