@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>if (localStorage.getItem('darkmode') === 'active') document.documentElement.classList.add('darkmode')</script>
-    <script src="assets/js/animation-state.js"></script>
     <meta name="description" content="Explore the portfolio of Vincent Ace Fronteras, an aspiring front-end and game developer.">
     <title>Vincent Ace Fronteras | Portfolio</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
     <div class="hero-header">
         <div class="wrapper">
             <header>
-                <button id="logo" class="brand-control" type="button" aria-label="Toggle color theme" aria-pressed="false">
+                <button id="logo" class="brand-control" type="button" aria-label="Toggle dark mode" aria-pressed="false">
                     <span class="logo-mark" aria-hidden="true">A</span>
                 </button>
                 <button id="open-sidebar-button" aria-label="Open navigation menu" aria-expanded="false"
@@ -39,8 +39,9 @@
                             </button>
                         </li>
                         <li><a aria-current="location" href="#home">Home</a></li>
-                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#tech-stack">Tech Stack</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -50,10 +51,10 @@
             <main>
                 <section id="home" class="page-home portfolio-section" aria-labelledby="home-title" tabindex="-1">
                     <div class="container">
-                        <div class="hero-pic animate__animated animate__fadeInLeft" data-entrance-id="home-portrait">
+                        <div class="hero-pic">
                             <img src="images/ace_optimized_.jpg" alt="Portrait of Vincent Ace Fronteras" width="362" height="362" fetchpriority="high" decoding="async">
                         </div>
-                        <div class="hero-text animate__animated animate__fadeInRight" data-entrance-id="home-copy">
+                        <div class="hero-text">
                             <p class="greeting">Hi,</p>
                             <h1 id="home-title">I'm <span>Ace Fronteras</span></h1>
                             <p>an undergraduate BSIT student aspiring to become a Front-end/game developer. Take a look around
@@ -69,16 +70,21 @@
                 </section>
 
                 <section id="about" class="page-about portfolio-section" aria-labelledby="about-title" tabindex="-1">
+                    <div class="container">
+                        <div class="hero-text">
+                            <h1 id="about-title">About Me</h1>
+                            <p class="section-description">Get to know me better</p>
+                        </div>
+                    </div>
                     <div class="aboutme-section">
                         <div class="container">
                             <div class="hero-text">
-                                <h1 id="about-title">About Me</h1>
-                                <p class="animate__animated animate__fadeInUp" data-entrance-id="about-intro">I'm Vincent Ace Fronteras, a 3rd-year Bachelor of Science in Information Technology student
+                                <p>I'm Vincent Ace Fronteras, a 3rd-year Bachelor of Science in Information Technology student
                                     at St. Dominic College of Asia. A student with a strong curiosity about the tech world,
                                     always eager to learn and experiment with new tools and ideas. My passion drives me to
                                     explore front-end development and continuous improvement in my skills.
                                 </p>
-                                <p class="animate__animated animate__fadeInUp animate__delay-1s" data-entrance-id="about-next">I'm an aspiring front-end developer passionate about creating intuitive and engaging user
+                                <p>I'm an aspiring front-end developer passionate about creating intuitive and engaging user
                                     experiences. I'm also wanna try game development and continuously working to improve my
                                     skills across the web and interactive technologies.
                                 </p>
@@ -90,12 +96,12 @@
                 <section id="tech-stack" class="page-stack portfolio-section" aria-labelledby="tech-stack-title" tabindex="-1">
                     <div class="container">
                         <div class="hero-text">
-                            <h1 id="tech-stack-title">Tech Stack</h1>
-                            <p>These are the skills I’ve learned so far</p>
+                            <h1 id="tech-stack-title">Tech Stacks</h1>
+                            <p class="section-description">The programming languages, frameworks, databases, and tools I use to build applications and projects.</p>
                         </div>
                     </div>
                     <section class="programming-section" aria-labelledby="languages-title">
-                        <h2 id="languages-title">Programming Languages</h2>
+                        <h3 id="languages-title">Languages</h3>
                         <div class="skills-icon">
                             <div class="stacks">
                                 <img src="images/Clogo.png" alt="" width="40" height="40" loading="lazy" decoding="async">
@@ -110,14 +116,13 @@
                                 <p>JavaScript</p>
                             </div>
                             <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>TypeScript</p>
+                            </div>
+                            <div class="stacks">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
                                 <p>Dart</p>
                             </div>
-                        </div>
-                    </section>
-                    <section class="programming-section" aria-labelledby="web-development-title">
-                        <h2 id="web-development-title">Web Development</h2>
-                        <div class="skills-icon">
                             <div class="stacks">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
                                 <p>HTML</p>
@@ -125,6 +130,23 @@
                             <div class="stacks">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
                                 <p>CSS</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="programming-section" aria-labelledby="web-development-title">
+                        <h3 id="web-development-title">Framework & Libraries</h3>
+                        <div class="skills-icon">
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>React</p>
+                            </div>
+                            <div class="stacks">
+                                <img class="theme-adaptive-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-plain.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Next.js</p>
+                            </div>
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Tailwind CSS</p>
                             </div>
                             <div class="stacks">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
@@ -135,17 +157,13 @@
                                 <p>Flutter</p>
                             </div>
                             <div class="stacks">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
-                                <p>Express JS</p>
-                            </div>
-                            <div class="stacks">
-                                <img src="images/render.png" alt="" width="40" height="40" loading="lazy" decoding="async">
-                                <p>Render</p>
+                                <img class="theme-adaptive-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Express.js</p>
                             </div>
                         </div>
                     </section>
                     <section class="programming-section" aria-labelledby="database-title">
-                        <h2 id="database-title">Database</h2>
+                        <h3 id="database-title">Database</h3>
                         <div class="skills-icon">
                             <div class="stacks">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
@@ -158,8 +176,12 @@
                         </div>
                     </section>
                     <section class="programming-section" aria-labelledby="tools-title">
-                        <h2 id="tools-title">Tools</h2>
+                        <h3 id="tools-title">Tools & Platforms</h3>
                         <div class="skills-icon">
+                            <div class="stacks">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Git</p>
+                            </div>
                             <div class="stacks">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
                                 <p>VS code</p>
@@ -176,8 +198,21 @@
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/netbeans/netbeans-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
                                 <p>Netbeans</p>
                             </div>
+                            <div class="stacks">
+                                <img class="theme-adaptive-icon" src="images/render.png" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Render</p>
+                            </div>
+                            <div class="stacks">
+                                <img class="vercel-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
+                                <p>Vercel</p>
+                            </div>
                         </div>
                     </section>
+                </section>
+
+                <section id="certifications" class="page-certifications portfolio-section" aria-labelledby="certifications-title" tabindex="-1">
+                    <h1 id="certifications-title" class="title">Certifications</h1>
+                    <p>Certifications and credentials will be added here.</p>
                 </section>
 
                 <section id="projects" class="page-project portfolio-section" aria-labelledby="projects-title" tabindex="-1">
@@ -186,7 +221,7 @@
                         <div class="container">
                             <div class="hero-text">
                                 <h2>SDCanteen</h2>
-                                <p class="animate__animated animate__fadeInUp" data-entrance-id="project-summary">SDCanteen is a mobile application designed to
+                                <p>SDCanteen is a mobile application designed to
                                     improve efficiency in handling orders and tracking supplies.
                                 </p>
                                 <div class="project-actions">
@@ -217,6 +252,9 @@
             </main>
             <div id="page-end-sentinel" aria-hidden="true"></div>
         </div>
+    </div>
+    <div id="logo-tooltip" class="logo-tooltip" role="tooltip" aria-hidden="true">
+        Psst... try clicking me! ✨
     </div>
 </body>
 

@@ -3,15 +3,101 @@ const openButton = document.getElementById("open-sidebar-button");
 const closeButton = document.getElementById("close-sidebar-button");
 const navbar = document.getElementById("navbar");
 const overlay = document.getElementById("overlay");
+const logoTooltip = document.getElementById("logo-tooltip");
 const mobileNav = window.matchMedia("(max-width: 900px)");
+let stopLogoTooltip = () => {};
 
 if (themeButton) {
+    if (logoTooltip) {
+        let tooltipStopped = false;
+        let hideTooltipTimer;
+        let nextTooltipTimer;
+
+        const positionLogoTooltip = () => {
+            const logoBounds = themeButton.getBoundingClientRect();
+            const tooltipBounds = logoTooltip.getBoundingClientRect();
+            const viewportPadding = 12;
+            const horizontalCenter = logoBounds.left + logoBounds.width / 2;
+            const left = Math.min(
+                Math.max(horizontalCenter - tooltipBounds.width / 2, viewportPadding),
+                window.innerWidth - tooltipBounds.width - viewportPadding,
+            );
+            const placeBelow = logoBounds.bottom + 12 + tooltipBounds.height <= window.innerHeight - viewportPadding;
+
+            logoTooltip.dataset.placement = placeBelow ? "bottom" : "top";
+            logoTooltip.style.left = `${left}px`;
+            logoTooltip.style.top = placeBelow
+                ? `${logoBounds.bottom + 12}px`
+                : `${Math.max(viewportPadding, logoBounds.top - tooltipBounds.height - 12)}px`;
+            logoTooltip.style.setProperty(
+                "--tail-x",
+                `${Math.min(Math.max(horizontalCenter - left - 5, 12), tooltipBounds.width - 12)}px`,
+            );
+        };
+
+        const showLogoTooltip = () => {
+            if (tooltipStopped) {
+                return;
+            }
+
+            if (navbar?.classList.contains("show")) {
+                nextTooltipTimer = window.setTimeout(showLogoTooltip, 1000);
+                return;
+            }
+
+            logoTooltip.classList.remove("is-visible");
+            positionLogoTooltip();
+            void logoTooltip.offsetWidth;
+            logoTooltip.classList.add("is-visible");
+            hideTooltipTimer = window.setTimeout(() => {
+                logoTooltip.classList.remove("is-visible");
+                nextTooltipTimer = window.setTimeout(showLogoTooltip, 2600 + Math.random() * 2000);
+            }, 2400);
+        };
+
+        stopLogoTooltip = () => {
+            tooltipStopped = true;
+            window.clearTimeout(hideTooltipTimer);
+            window.clearTimeout(nextTooltipTimer);
+            logoTooltip.classList.remove("is-visible");
+        };
+
+        openButton?.addEventListener("click", () => logoTooltip.classList.remove("is-visible"));
+        const updateTooltipPosition = () => {
+            window.requestAnimationFrame(() => {
+                if (logoTooltip.classList.contains("is-visible")) {
+                    positionLogoTooltip();
+                }
+            });
+        };
+        window.addEventListener("resize", updateTooltipPosition, { passive: true });
+        window.addEventListener("orientationchange", updateTooltipPosition, { passive: true });
+        window.visualViewport?.addEventListener("resize", updateTooltipPosition, { passive: true });
+        window.addEventListener("scroll", () => {
+            if (logoTooltip.classList.contains("is-visible")) {
+                positionLogoTooltip();
+            }
+        }, { passive: true });
+        if ("ResizeObserver" in window) {
+            const tooltipLayoutObserver = new ResizeObserver(() => {
+                if (logoTooltip.classList.contains("is-visible")) {
+                    positionLogoTooltip();
+                }
+            });
+            tooltipLayoutObserver.observe(themeButton);
+            tooltipLayoutObserver.observe(logoTooltip);
+        }
+
+        showLogoTooltip();
+    }
+
     themeButton.setAttribute(
         "aria-pressed",
         String(document.documentElement.classList.contains("darkmode")),
     );
 
     themeButton.addEventListener("click", () => {
+        stopLogoTooltip();
         const enabled = document.documentElement.classList.toggle("darkmode");
         themeButton.setAttribute("aria-pressed", String(enabled));
 
