@@ -4,8 +4,13 @@ const closeButton = document.getElementById("close-sidebar-button");
 const navbar = document.getElementById("navbar");
 const overlay = document.getElementById("overlay");
 const logoTooltip = document.getElementById("logo-tooltip");
+const footerYear = document.getElementById("footer-year");
 const mobileNav = window.matchMedia("(max-width: 900px)");
 let stopLogoTooltip = () => {};
+
+if (footerYear) {
+    footerYear.textContent = String(new Date().getFullYear());
+}
 
 if (themeButton) {
     if (logoTooltip) {

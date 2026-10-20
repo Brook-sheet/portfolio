@@ -18,6 +18,7 @@
         rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
     <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/certifications.js" defer></script>
 </head>
 
 <body>
@@ -41,7 +42,7 @@
                         <li><a aria-current="location" href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#tech-stack">Tech Stack</a></li>
-                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#certifications">Certificates</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -57,14 +58,10 @@
                         <div class="hero-text">
                             <p class="greeting">Hi,</p>
                             <h1 id="home-title">I'm <span>Ace Fronteras</span></h1>
-                            <p>an undergraduate BSIT student aspiring to become a Front-end/game developer. Take a look around
+                            <p>an undergraduate BSIT student aspiring to become a Frontend developer. Take a look around
                                 and learn more about me!
                             </p>
-                            <div class="social">
-                                <a href="https://github.com/Brook-sheet" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-                                <a href="https://www.linkedin.com/in/ace-fronteras-0473002b3/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i
-                                        class="fa-brands fa-linkedin"></i></a>
-                            </div>
+                            <a class="home-connect-button" href="#contact">Let's Connect</a>
                         </div>
                     </div>
                 </section>
@@ -79,17 +76,39 @@
                     <div class="aboutme-section">
                         <div class="container">
                             <div class="hero-text">
-                                <p>I'm Vincent Ace Fronteras, a 3rd-year Bachelor of Science in Information Technology student
-                                    at St. Dominic College of Asia. A student with a strong curiosity about the tech world,
-                                    always eager to learn and experiment with new tools and ideas. My passion drives me to
-                                    explore front-end development and continuous improvement in my skills.
-                                </p>
-                                <p>I'm an aspiring front-end developer passionate about creating intuitive and engaging user
-                                    experiences. I'm also wanna try game development and continuously working to improve my
-                                    skills across the web and interactive technologies.
+                                <p>I'm Vincent Ace Fronteras, I’m a passionate developer who enjoys building responsive designs and user-friendly web
+                                    and mobile applications. I work with technologies like TypeScript, Next.js, and Node.js while continuously improving
+                                    my skills and deepening my understanding of these technologies to become a better developer.
                                 </p>
                             </div>
                         </div>
+                    </div>
+                    <div class="education-journey" aria-labelledby="education-journey-title">
+                        <h2 id="education-journey-title">Education Journey</h2>
+                        <ol class="education-timeline">
+                            <li class="education-timeline__entry education-timeline__entry--current">
+                                <p class="education-timeline__date">2023 – Present</p>
+                                <div class="education-timeline__content">
+                                    <h3>St. Dominic College of Asia</h3>
+                                    <p class="education-timeline__level">College</p>
+                                    <p>Currently pursuing my Bachelor of Science in Information Technology (BSIT), developing my knowledge and skills in programming, web development, and software development.</p>
+                                </div>
+                            </li>
+                            <li class="education-timeline__entry">
+                                <p class="education-timeline__date">2021 – 2023</p>
+                                <div class="education-timeline__content">
+                                    <h3>Unida Christian Colleges</h3>
+                                    <p class="education-timeline__level">Senior High School</p>
+                                </div>
+                            </li>
+                            <li class="education-timeline__entry">
+                                <p class="education-timeline__date">Earlier Years</p>
+                                <div class="education-timeline__content">
+                                    <h3>General Licerio Topacio National High School</h3>
+                                    <p class="education-timeline__level">Junior High School</p>
+                                </div>
+                            </li>
+                        </ol>
                     </div>
                 </section>
 
@@ -211,8 +230,45 @@
                 </section>
 
                 <section id="certifications" class="page-certifications portfolio-section" aria-labelledby="certifications-title" tabindex="-1">
-                    <h1 id="certifications-title" class="title">Certifications</h1>
-                    <p>Certifications and credentials will be added here.</p>
+                    <div class="certifications-inner">
+                        <div class="certifications-header">
+                            <h1 id="certifications-title" class="title">Certificates</h1>
+                            <p>Credentials, continuous learning, and technical growth.</p>
+                        </div>
+                        <div id="certificate-gallery" class="certificate-gallery" aria-label="Certificates">
+                            <p class="certificate-gallery__status">Certificates will appear here once the gallery loads.</p>
+                        </div>
+                        <noscript>Enable JavaScript to view the certificate gallery.</noscript>
+                    </div>
+                    <dialog id="certificate-dialog" class="certificate-dialog" aria-modal="true" aria-labelledby="certificate-dialog-title">
+                        <div class="certificate-dialog__panel">
+                            <div class="certificate-dialog__header">
+                                <div>
+                                    <p class="certificate-dialog__eyebrow">Certificate</p>
+                                    <h2 id="certificate-dialog-title"></h2>
+                                    <p id="certificate-dialog-issuer" class="certificate-dialog__issuer"></p>
+                                </div>
+                                <button id="certificate-dialog-close" class="certificate-dialog__close" type="button" aria-label="Close certificate viewer">
+                                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="certificate-dialog__body">
+                                <p id="certificate-dialog-description" class="certificate-dialog__description" hidden></p>
+                                <div class="certificate-dialog__image-wrap">
+                                    <img id="certificate-dialog-image" alt="" hidden>
+                                    <p id="certificate-dialog-fallback" class="certificate-image-fallback" hidden>
+                                        This certificate image is unavailable.
+                                    </p>
+                                </div>
+                                <dl id="certificate-dialog-details" class="certificate-dialog__details"></dl>
+                            </div>
+                            <footer class="certificate-dialog__actions">
+                                <a id="certificate-dialog-original" class="certificate-dialog__link" target="_blank" rel="noopener noreferrer">Open Original</a>
+                                <a id="certificate-dialog-download" class="certificate-dialog__link" download>Download Certificate</a>
+                                <a id="certificate-dialog-verification" class="certificate-dialog__link" target="_blank" rel="noopener noreferrer" hidden>Verify Credential</a>
+                            </footer>
+                        </div>
+                    </dialog>
                 </section>
 
                 <section id="projects" class="page-project portfolio-section" aria-labelledby="projects-title" tabindex="-1">
@@ -239,17 +295,48 @@
                 <section id="contact" class="page-contact portfolio-section" aria-labelledby="contact-title" tabindex="-1">
                     <div class="container">
                         <div class="hero-text">
-                            <h1 id="contact-title">Contact Me</h1>
+                            <h1 id="contact-title">Contact</h1>
                             <p>If you have any inquiries or wish to connect, please don't hesitate to send me a message.</p>
-                            <div class="social">
-                                <a href="https://github.com/Brook-sheet" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-                                <a href="https://www.linkedin.com/in/ace-fronteras-0473002b3/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i
-                                        class="fa-brands fa-linkedin"></i></a>
-                            </div>
                         </div>
                     </div>
                 </section>
             </main>
+            <footer class="site-footer" aria-labelledby="footer-brand">
+                <div class="site-footer__top">
+                    <div class="site-footer__brand">
+                        <a id="footer-brand" class="site-footer__name" href="#home">Ace Fronteras</a>
+                        <p>Aspiring Front-End Developer building responsive, user-friendly digital experiences.</p>
+                    </div>
+                    <div class="site-footer__navigation">
+                        <h2 id="footer-navigation-title">Explore</h2>
+                        <nav aria-labelledby="footer-navigation-title">
+                            <ul class="site-footer__nav">
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#about">Education</a></li>
+                                <li><a href="#projects">Experience</a></li>
+                                <li><a href="#tech-stack">Tech Stack</a></li>
+                                <li><a href="#certifications">Certifications</a></li>
+                                <li><a href="#projects">Projects</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="site-footer__social">
+                        <h2 id="footer-social-title">Connect</h2>
+                        <ul aria-labelledby="footer-social-title">
+                            <li><a href="https://github.com/Brook-sheet" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/ace-fronteras/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.facebook.com/ace.casimiro.77" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.instagram.com/_acefrntrs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-footer__bottom">
+                    <p>© <span id="footer-year">2026</span> Ace Fronteras. All rights reserved.</p>
+                    <p>Designed &amp; built by Ace Fronteras</p>
+                </div>
+            </footer>
             <div id="page-end-sentinel" aria-hidden="true"></div>
         </div>
     </div>
