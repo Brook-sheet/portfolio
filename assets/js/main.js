@@ -5,11 +5,56 @@ const navbar = document.getElementById("navbar");
 const overlay = document.getElementById("overlay");
 const logoTooltip = document.getElementById("logo-tooltip");
 const footerYear = document.getElementById("footer-year");
+const contactForm = document.getElementById("contact-form");
 const mobileNav = window.matchMedia("(max-width: 900px)");
 let stopLogoTooltip = () => {};
 
 if (footerYear) {
     footerYear.textContent = String(new Date().getFullYear());
+}
+
+if (contactForm instanceof HTMLFormElement) {
+    const status = document.getElementById("contact-form-status");
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const submitLabel = submitButton?.querySelector("span");
+
+    if (status && submitButton instanceof HTMLButtonElement && submitLabel) {
+        contactForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            if (submitButton.disabled) {
+                return;
+            }
+
+            submitButton.disabled = true;
+            submitLabel.textContent = "Sending...";
+            status.textContent = "";
+            status.removeAttribute("data-state");
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: "POST",
+                    body: new FormData(contactForm),
+                    headers: { Accept: "application/json" },
+                });
+
+                if (!response.ok) {
+                    status.textContent = "Your message couldn't be sent. Please try again in a moment.";
+                    status.dataset.state = "error";
+                    return;
+                }
+
+                contactForm.reset();
+                status.textContent = "Thanks for reaching out! Your message has been sent.";
+                status.dataset.state = "success";
+            } catch {
+                status.textContent = "We couldn't connect to send your message. Check your connection and try again.";
+                status.dataset.state = "error";
+            } finally {
+                submitButton.disabled = false;
+                submitLabel.textContent = "Send Message";
+            }
+        });
+    }
 }
 
 if (themeButton) {
