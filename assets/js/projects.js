@@ -24,6 +24,25 @@ const projects = [
             "Buzzer and LED indicators",
             "Wi-Fi connectivity",
         ],
+        cardTechnologies: ["Next.js", "TypeScript", "Node.js", "MongoDB"],
+        technologyGroups: [
+            {
+                category: "Frontend Development",
+                items: ["Next.js", "TypeScript", "Tailwind CSS"],
+            },
+            {
+                category: "Backend & Database",
+                items: ["MongoDB", "Node.js"],
+            },
+            {
+                category: "Hardware & IoT",
+                items: ["ESP32 microcontroller", "Compartment-level sensors", "Buzzer and LED indicators", "Wi-Fi connectivity"],
+            },
+            {
+                category: "AI & Machine Learning",
+                items: ["Supervised Machine Learning", "Random Forest classification"],
+            },
+        ],
         teamMembers: [
             "Vincent Ace C. Fronteras",
             "John Carl E. Layosa",
@@ -48,6 +67,17 @@ const projects = [
             "Evaluate the app's usability and effectiveness in supporting order handling and supply tracking.",
         ],
         technologies: ["Android Studio", "XML", "Java", "Firebase"],
+        cardTechnologies: ["Java", "Android Studio", "Firebase", "XML"],
+        technologyGroups: [
+            {
+                category: "Mobile Development",
+                items: ["Android Studio", "XML", "Java"],
+            },
+            {
+                category: "Backend & Database",
+                items: ["Firebase"],
+            },
+        ],
         teamMembers: [
             "Vincent Ace C. Fronteras",
             "Jereeza Mae T. Mayuga",
@@ -90,6 +120,29 @@ const projects = [
             "JSON",
             "Network Time Protocol (NTP)",
         ],
+        cardTechnologies: ["ESP32", "Next.js", "Node.js", "MongoDB", "JavaScript"],
+        technologyGroups: [
+            {
+                category: "Frontend Development",
+                items: ["Next.js", "JavaScript"],
+            },
+            {
+                category: "Backend & Database",
+                items: ["Node.js", "MongoDB"],
+            },
+            {
+                category: "Hardware & IoT",
+                items: ["ESP32", "Limit switch", "Buzzer", "LED", "Wi-Fi"],
+            },
+            {
+                category: "Tools & Development Environment",
+                items: ["Arduino IDE"],
+            },
+            {
+                category: "Communication & Protocols",
+                items: ["HTTP", "JSON", "Network Time Protocol (NTP)"],
+            },
+        ],
         teamMembers: [
             "Vincent Ace C. Fronteras",
             "John Carl E. Layosa",
@@ -97,6 +150,60 @@ const projects = [
             "Asher Daniel M. Tibayan",
         ],
         role: "Frontend",
+        status: "Completed",
+    },
+    {
+        id: "ai-smart-trash-bin",
+        title: "AI-Enabled Smart Trash Bin: Automatic Waste Classification and Proper Segregation",
+        cardTitle: "AI-Enabled Smart Trash Bin",
+        category: "Academic Capstone Project / AI / IoT / Sustainability",
+        shortDescription: "An AI-powered smart trash bin that classifies waste as biodegradable, non-biodegradable, or recyclable, opens the correct compartment, and alerts maintenance staff when bins are full.",
+        description: "An AI-powered smart trash bin designed to automatically identify and segregate waste into biodegradable, non-biodegradable, and recyclable categories. It also monitors bin fill levels and sends alerts to maintenance staff when bins are full.",
+        objectives: [
+            "Automatically classify waste using AI image recognition.",
+            "Open the correct bin compartment using a servo motor.",
+            "Monitor waste levels using sensors and notify maintenance staff when bins are full.",
+            "Promote proper waste segregation and environmental awareness.",
+        ],
+        technologies: [
+            "AI image classification",
+            "Convolutional Neural Network (CNN)",
+            "MobileNetV2",
+            "ESP32",
+            "ESP32-CAM",
+            "Ultrasonic sensors",
+            "Servo motors",
+            "Firebase Realtime Database",
+            "Node.js",
+            "MongoDB",
+            "Dart",
+        ],
+        cardTechnologies: ["MobileNetV2", "ESP32-CAM", "Firebase Realtime Database", "Node.js", "MongoDB"],
+        technologyGroups: [
+            {
+                category: "AI & Machine Learning",
+                items: ["AI image classification", "Convolutional Neural Network (CNN)", "MobileNetV2"],
+            },
+            {
+                category: "Hardware & IoT",
+                items: ["ESP32", "ESP32-CAM", "Ultrasonic sensors", "Servo motors"],
+            },
+            {
+                category: "Backend & Database",
+                items: ["Firebase Realtime Database", "Node.js", "MongoDB"],
+            },
+            {
+                category: "Programming Language",
+                items: ["Dart"],
+            },
+        ],
+        teamMembers: [
+            "Vincent Ace C. Fronteras",
+            "John Carl E. Layosa",
+            "Kristine Mae B. Montajas",
+            "Asher Daniel M. Tibayan",
+        ],
+        role: "Front-end",
         status: "Completed",
     },
 ];
@@ -155,6 +262,27 @@ if (
 
         section.append(heading, list);
         container.append(section);
+    };
+
+    const appendTechnologyGroups = (container, groups) => {
+        if (!Array.isArray(groups)) {
+            return;
+        }
+
+        for (const group of groups) {
+            if (!group.category || !Array.isArray(group.items) || group.items.length === 0) {
+                continue;
+            }
+
+            const section = createElement("section", "project-dialog__section");
+            const heading = createElement("h3", "", group.category);
+            const tags = createElement("ul", "project-tags project-dialog__tags");
+            for (const technology of group.items) {
+                tags.append(createElement("li", "", technology));
+            }
+            section.append(heading, tags);
+            container.append(section);
+        }
     };
 
     const appendRoleSection = (container, project) => {
@@ -225,9 +353,9 @@ if (
         );
         trigger.append(meta, title, description);
 
-        if (Array.isArray(project.technologies) && project.technologies.length > 0) {
+        if (Array.isArray(project.cardTechnologies) && project.cardTechnologies.length > 0) {
             const tags = createElement("ul", "project-tags");
-            for (const technology of project.technologies) {
+            for (const technology of project.cardTechnologies) {
                 tags.append(createElement("li", "", technology));
             }
             trigger.append(tags);
@@ -243,13 +371,15 @@ if (
 
     const renderProjects = () => {
         const ids = new Set();
+        const fragment = document.createDocumentFragment();
         for (const project of projects) {
             if (!project.id || ids.has(project.id)) {
                 throw new Error(`Project IDs must be present and unique: ${project.id || "(missing)"}`);
             }
             ids.add(project.id);
-            projectGrid.append(renderProjectCard(project));
+            fragment.append(renderProjectCard(project));
         }
+        projectGrid.append(fragment);
     };
 
     const renderProjectDetails = (project) => {
@@ -263,7 +393,7 @@ if (
         projectDialogActions.replaceChildren();
 
         appendListSection(projectDialogSections, "Objectives", project.objectives, "ol");
-        appendListSection(projectDialogSections, "Technologies used", project.technologies);
+        appendTechnologyGroups(projectDialogSections, project.technologyGroups);
         appendListSection(projectDialogSections, "Team members", project.teamMembers);
         appendRoleSection(projectDialogSections, project);
 

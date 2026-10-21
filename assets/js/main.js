@@ -139,13 +139,15 @@ if (openButton && closeButton && navbar && overlay) {
     if (sections.length > 0 && "IntersectionObserver" in window) {
         const pageEndSection = sections[sections.length - 1];
         const pageEndSentinel = document.getElementById("page-end-sentinel");
+        const header = document.querySelector("header");
         let sectionObserver;
+        let observerUpdateFrame = 0;
         const intersectingSections = new Set();
 
         const observeSections = () => {
             sectionObserver?.disconnect();
             intersectingSections.clear();
-            const headerHeight = document.querySelector("header")?.getBoundingClientRect().height ?? 0;
+            const headerHeight = header?.getBoundingClientRect().height ?? 0;
             const bottomOffset = Math.round(window.innerHeight * 0.55);
 
             sectionObserver = new IntersectionObserver((entries) => {
@@ -178,7 +180,16 @@ if (openButton && closeButton && navbar && overlay) {
         };
 
         observeSections();
-        window.addEventListener("resize", observeSections, { passive: true });
+        window.addEventListener("resize", () => {
+            if (observerUpdateFrame) {
+                return;
+            }
+
+            observerUpdateFrame = window.requestAnimationFrame(() => {
+                observerUpdateFrame = 0;
+                observeSections();
+            });
+        }, { passive: true });
 
         if (pageEndSentinel) {
             const pageEndObserver = new IntersectionObserver((entries) => {

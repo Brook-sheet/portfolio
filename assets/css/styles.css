@@ -5,7 +5,6 @@
     --base-variant: #cecece;
     --text-color: #111528;
     --secondary-text: #232738;
-    --shadow-color: #433d8b;
     --button-hover: #b86edd;
     --button-active: #500974;
     --border-color: #17153b;
@@ -18,7 +17,6 @@
     --base-variant: #232738;
     --text-color: #fff;
     --secondary-text: #cecece;
-    --shadow-color: #b86edd;
     --button-hover: #722897;
     --button-active: #500974;
     --border-color: #3e1050;
@@ -453,11 +451,6 @@ section[id] {
 
 :root:not(.darkmode) .page-home .container {
     border-color: #a3a3a3;
-}
-
-.page-project .container:hover {
-    transform: scale(1.02);
-    box-shadow: none;
 }
 
 .hero-pic {
@@ -1493,10 +1486,6 @@ section[id] {
 
 .project-dialog__tags {
     padding: 0;
-}
-
-.project-dialog__role + .project-dialog__list {
-    margin-top: 0.55rem;
 }
 
 .project-dialog__actions {
