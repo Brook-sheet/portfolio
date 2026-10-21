@@ -674,9 +674,11 @@ section[id] {
     border-color: #a3a3a3;
 }
 
-.stacks:hover {
-    transform: scale(1.08);
-    background-color: var(--button-hover);
+@media (hover: hover) {
+    .stacks:hover {
+        transform: scale(1.08);
+        background-color: var(--button-hover);
+    }
 }
 
 .stacks img {
@@ -1230,6 +1232,11 @@ section[id] {
         background-position: center top;
         background-repeat: repeat-y;
         background-size: 100% auto;
+    }
+
+    .stacks {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
     }
 
     header {
