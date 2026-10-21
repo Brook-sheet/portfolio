@@ -19,6 +19,7 @@
     <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/certifications.js" defer></script>
+    <script src="assets/js/projects.js" defer></script>
 </head>
 
 <body>
@@ -153,7 +154,7 @@
                         </div>
                     </section>
                     <section class="programming-section" aria-labelledby="web-development-title">
-                        <h3 id="web-development-title">Framework & Libraries</h3>
+                        <h3 id="web-development-title">Frameworks & Libraries</h3>
                         <div class="skills-icon">
                             <div class="stacks">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
@@ -182,7 +183,7 @@
                         </div>
                     </section>
                     <section class="programming-section" aria-labelledby="database-title">
-                        <h3 id="database-title">Database</h3>
+                        <h3 id="database-title">Databases</h3>
                         <div class="skills-icon">
                             <div class="stacks">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="" width="40" height="40" loading="lazy" decoding="async">
@@ -244,7 +245,7 @@
                         <div class="certificate-dialog__panel">
                             <div class="certificate-dialog__header">
                                 <div>
-                                    <p class="certificate-dialog__eyebrow">Certificate</p>
+                                    <p class="certificate-dialog__eyebrow">Certificates</p>
                                     <h2 id="certificate-dialog-title"></h2>
                                     <p id="certificate-dialog-issuer" class="certificate-dialog__issuer"></p>
                                 </div>
@@ -272,24 +273,34 @@
                 </section>
 
                 <section id="projects" class="page-project portfolio-section" aria-labelledby="projects-title" tabindex="-1">
-                    <h1 id="projects-title" class="title">Projects</h1>
-                    <div class="aboutme-section">
-                        <div class="container">
-                            <div class="hero-text">
-                                <h2>SDCanteen</h2>
-                                <p>SDCanteen is a mobile application designed to
-                                    improve efficiency in handling orders and tracking supplies.
-                                </p>
-                                <div class="project-actions">
-                                    <a href="https://github.com/jereeza-mae-mayuga/SDCAnteen.git" target="_blank" rel="noopener noreferrer"
-                                        class="project-link">
-                                        <i class="fa-brands fa-github" aria-hidden="true"></i>
-                                        view project
-                                    </a>
-                                </div>
-                            </div>
+                    <div class="projects-inner">
+                        <div class="projects-header">
+                            <h1 id="projects-title">Featured Projects</h1>
+                            <p>A selection of projects I've worked on.</p>
                         </div>
+                        <div id="project-grid" class="project-grid" role="list" aria-label="Featured projects"></div>
                     </div>
+                    <dialog id="project-dialog" class="project-dialog" aria-modal="true" aria-labelledby="project-dialog-title" aria-describedby="project-dialog-description">
+                        <div class="project-dialog__panel">
+                            <div class="project-dialog__header">
+                                <div class="project-dialog__heading">
+                                    <div class="project-dialog__meta">
+                                        <p id="project-dialog-category" class="project-dialog__category" hidden></p>
+                                        <span id="project-dialog-status" class="project-status" hidden></span>
+                                    </div>
+                                    <h2 id="project-dialog-title"></h2>
+                                </div>
+                                <button id="project-dialog-close" class="project-dialog__close" type="button" aria-label="Close project details">
+                                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div class="project-dialog__body">
+                                <p id="project-dialog-description" class="project-dialog__description"></p>
+                                <div id="project-dialog-sections" class="project-dialog__sections"></div>
+                            </div>
+                            <footer id="project-dialog-actions" class="project-dialog__actions" hidden></footer>
+                        </div>
+                    </dialog>
                 </section>
 
                 <section id="contact" class="page-contact portfolio-section" aria-labelledby="contact-title" tabindex="-1">
