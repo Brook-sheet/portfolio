@@ -205,6 +205,7 @@ const projects = [
         ],
         role: "Front-end",
         status: "Completed",
+        repositoryUrl: "https://github.com/Kmontajas/Smart-Trash-Bin.git",
     },
 ];
 
